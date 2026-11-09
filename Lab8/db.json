@@ -1,0 +1,391 @@
+{
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 1,
+      "roomIds": [
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 1777476358331,
+      "roomIds": [
+        8,
+        1
+      ]
+    },
+    {
+      "id": 1778054846783,
+      "userId": 1778054846699,
+      "roomIds": [
+        3,
+        14
+      ]
+    },
+    {
+      "id": 1778063385767,
+      "userId": 1778063385716,
+      "roomIds": []
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "userId": 1,
+      "roomIds": [
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 1777476358331,
+      "roomIds": [
+        9,
+        2
+      ]
+    },
+    {
+      "id": 1778054846827,
+      "userId": 1778054846699,
+      "roomIds": [
+        14
+      ]
+    },
+    {
+      "id": 1778063385795,
+      "userId": 1778063385716,
+      "roomIds": []
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Luxury Suiteee",
+      "category": "Luxury",
+      "price": 130,
+      "rating": 4.9,
+      "imageUrl": "img/LuxRoom.svg",
+      "size": "65 m²",
+      "description": "Spacious luxury suite with ocean view, king-size bed, and private balcony.",
+      "amenities": [
+        "Ocean View",
+        "King Bed",
+        "Balcony",
+        "Jacuzzi"
+      ],
+      "id": 1
+    },
+    {
+      "name": "Executive Suite",
+      "category": "Luxury",
+      "price": 130,
+      "rating": 4.8,
+      "imageUrl": "img/room1.jpg",
+      "size": "50 m²",
+      "description": "Elegant executive suite with workspace, city view, and premium amenities.",
+      "amenities": [
+        "City View",
+        "Queen Bed",
+        "Work Desk",
+        "Mini Bar"
+      ],
+      "id": 2
+    },
+    {
+      "name": "Deluxe Double",
+      "category": "Deluxe",
+      "price": 85,
+      "rating": 4.7,
+      "imageUrl": "img/room3.jpg",
+      "size": "40 m²",
+      "description": "Comfortable deluxe double room with modern furnishings and garden view.",
+      "amenities": [
+        "Garden View",
+        "Double Bed",
+        "TV",
+        "Coffee Maker"
+      ],
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Standard Twin",
+      "category": "Standard",
+      "price": 60,
+      "rating": 4.5,
+      "description": "Cozy twin room with two single beds, perfect for friends or colleagues.",
+      "imageUrl": "img/MiniRoom.svg",
+      "amenities": [
+        "City View",
+        "Twin Beds",
+        "TV",
+        "Work Desk"
+      ],
+      "size": "32 m²"
+    },
+    {
+      "id": 5,
+      "name": "Family Room",
+      "category": "Family",
+      "price": 110,
+      "rating": 4.9,
+      "description": "Large family room with extra space, perfect for 4 guests.",
+      "imageUrl": "img/room4.jpg",
+      "amenities": [
+        "Family Size",
+        "2 Queen Beds",
+        "Kitchenette",
+        "Play Area"
+      ],
+      "size": "70 m²"
+    },
+    {
+      "id": 6,
+      "name": "Single Economy",
+      "category": "Economy",
+      "price": 45,
+      "rating": 4.3,
+      "description": "Budget-friendly single room with essential amenities for solo travelers.",
+      "imageUrl": "img/room2.jpg",
+      "amenities": [
+        "Single Bed",
+        "TV",
+        "Basic Amenities"
+      ],
+      "size": "20 m²"
+    },
+    {
+      "id": 7,
+      "name": "Premium Suite",
+      "category": "Luxury",
+      "price": 150,
+      "rating": 5,
+      "description": "Ultimate luxury suite with panoramic views, private terrace, and butler service.",
+      "imageUrl": "img/room5.jpg",
+      "amenities": [
+        "Panoramic View",
+        "King Bed",
+        "Terrace",
+        "Butler Service",
+        "Pool Access"
+      ],
+      "size": "85 m²"
+    },
+    {
+      "id": 8,
+      "name": "Business Class",
+      "category": "Deluxe",
+      "price": 85,
+      "rating": 4.6,
+      "description": "Designed for business travelers with ergonomic workspace and high-speed WiFi.",
+      "imageUrl": "img/room6.jpg",
+      "amenities": [
+        "Work Desk",
+        "Fast WiFi",
+        "Queen Bed",
+        "Meeting Access"
+      ],
+      "size": "38 m²"
+    },
+    {
+      "id": 9,
+      "name": "Honeymoon Suite",
+      "category": "Luxury",
+      "price": 140,
+      "rating": 4.9,
+      "description": "Romantic suite with special decorations, king bed, and couple's spa access.",
+      "imageUrl": "img/room7.jpg",
+      "amenities": [
+        "Romantic Setup",
+        "King Bed",
+        "Spa Access",
+        "Champagne"
+      ],
+      "size": "60 m²"
+    },
+    {
+      "id": 10,
+      "name": "Garden View Room",
+      "category": "Standard",
+      "price": 70,
+      "rating": 4.5,
+      "description": "Peaceful room overlooking our beautiful gardens with private patio.",
+      "imageUrl": "img/room8.jpg",
+      "amenities": [
+        "Garden View",
+        "Queen Bed",
+        "Patio",
+        "TV"
+      ],
+      "size": "35 m²"
+    },
+    {
+      "id": 11,
+      "name": "Pool Access Suite",
+      "category": "Deluxe",
+      "price": 130,
+      "rating": 4.8,
+      "description": "Suite with direct access to the swimming pool and private sun loungers.",
+      "imageUrl": "img/EliteRoom.svg",
+      "amenities": [
+        "Pool Access",
+        "King Bed",
+        "Sun Loungers",
+        "Mini Bar"
+      ],
+      "size": "55 m²"
+    },
+    {
+      "id": 12,
+      "name": "Penthouse",
+      "category": "Luxury",
+      "price": 200,
+      "rating": 5,
+      "description": "Top-floor penthouse with 360° views, private elevator, and exclusive amenities.",
+      "imageUrl": "img/LuxRoom.svg",
+      "amenities": [
+        "360° View",
+        "King Bed",
+        "Private Elevator",
+        "Exclusive Lounge",
+        "Jacuzzi"
+      ],
+      "size": "120 m²"
+    },
+    {
+      "id": 13,
+      "name": "Accessible Room",
+      "category": "Standard",
+      "price": 65,
+      "rating": 4.7,
+      "description": "Specially designed room for guests with disabilities, wheelchair accessible.",
+      "imageUrl": "img/SingleRoom.svg",
+      "amenities": [
+        "Wheelchair Access",
+        "Queen Bed",
+        "Emergency Call",
+        "Wide Doors"
+      ],
+      "size": "40 m²"
+    },
+    {
+      "id": 14,
+      "name": "Pet Friendly Suite",
+      "category": "Family",
+      "price": 100,
+      "rating": 4.6,
+      "description": "Suite designed for guests traveling with pets, includes pet bed and bowls.",
+      "imageUrl": "img/StandeRoom.svg",
+      "amenities": [
+        "Pet Bed",
+        "Food Bowls",
+        "Queen Bed",
+        "Garden Access"
+      ],
+      "size": "45 m²"
+    },
+    {
+      "name": "Long Stay Studio",
+      "category": "Deluxe",
+      "price": 80,
+      "rating": 4.4,
+      "imageUrl": "img/MiniRoom.svg",
+      "size": "50 m²",
+      "description": "Studio apartment with kitchenette, ideal for extended stays.",
+      "amenities": [
+        "Kitchenette",
+        "Queen Bed",
+        "Living Area",
+        "Laundry Service"
+      ],
+      "id": 15
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "phone": "+375291234567",
+      "email": "admin@rayalpark.com",
+      "birthDate": "1990-01-01",
+      "password": "Admin@123456",
+      "firstName": "Виталий",
+      "lastName": "Лузько",
+      "middleName": "",
+      "nickname": "VityaL",
+      "role": "admin",
+      "createdAt": "2025-01-15T10:30:00Z"
+    },
+    {
+      "id": 1777476358331,
+      "phone": "+375339958391",
+      "email": "luzko09@mail.ru",
+      "birthDate": "2007-02-06",
+      "password": "MetroExodus2345@",
+      "firstName": "Геннадий",
+      "lastName": "Васьков",
+      "middleName": "Александрович",
+      "nickname": "GenaL",
+      "role": "user",
+      "createdAt": "2026-04-29T15:25:58.331Z"
+    },
+    {
+      "id": 1778063385716,
+      "phone": "+375339993213",
+      "email": "Alexandr@mail.ru",
+      "birthDate": "2006-02-08",
+      "password": "yJMVC5IKV$ki",
+      "firstName": "Александр",
+      "lastName": "Петров",
+      "middleName": "Иванович",
+      "nickname": "АлеПе657Go",
+      "role": "user",
+      "createdAt": "2026-05-06T10:29:45.716Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "roomId": 2,
+      "roomName": "Executive Suite",
+      "price": 95,
+      "checkIn": "2024-02-10",
+      "checkOut": "2024-02-13",
+      "status": "completed",
+      "createdAt": "2026-01-10T14:20:00Z"
+    },
+    {
+      "id": 1777479624854,
+      "userId": 1777476358331,
+      "roomId": 2,
+      "roomName": "Executive Suite",
+      "price": 95,
+      "checkIn": "2026-04-29",
+      "checkOut": "2026-05-02",
+      "status": "confirmed",
+      "createdAt": "2026-04-29T16:20:24.854Z"
+    },
+    {
+      "id": 1777479624886,
+      "userId": 1777476358331,
+      "roomId": 9,
+      "roomName": "Honeymoon Suite",
+      "price": 140,
+      "checkIn": "2026-04-29",
+      "checkOut": "2026-05-02",
+      "status": "confirmed",
+      "createdAt": "2026-04-29T16:20:24.886Z"
+    }
+  ],
+  "feedback": [
+    {
+      "id": 1777479663335,
+      "userId": 1777476358331,
+      "userName": "Геннадий Васьков",
+      "roomId": 9,
+      "rating": 5,
+      "comment": "Хороший и комфортный номер, все удобства есть в номере.",
+      "createdAt": "2026-04-29T16:21:03.335Z"
+    }
+  ]
+}

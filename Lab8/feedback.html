@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы - Rayal Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .feedback-page .main-banner {
+            height: auto;
+            min-height: auto;
+            background-image: none;
+            background: #fff;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .feedback-container {
+            max-width: 1200px;
+            margin: 61px auto;
+            padding: 0 20px;
+            margin-left: 210px;
+        }
+        
+        .feedback-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .feedback-header h1 {
+            font-family: 'Gelasio', serif;
+            font-size: 42px;
+            color: #081F32;
+            margin-bottom: 10px;
+        }
+        
+        .feedback-header p {
+            color: #6E7A8A;
+            font-size: 18px;
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .avg-rating {
+            text-align: center;
+        }
+        
+        .avg-rating .big-rating {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1B75BB;
+        }
+        
+        .avg-rating .stars {
+            color: #FFB800;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .avg-rating .count {
+            color: #6E7A8A;
+            font-size: 14px;
+        }
+        
+        .rating-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-chip {
+            background: white;
+            border: 1px solid #E0E0E0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .filter-chip:hover, .filter-chip.active {
+            background: #1B75BB;
+            color: white;
+            border-color: #1B75BB;
+        }
+        
+        .feedback-form {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feedback-form h3 {
+            font-family: 'Gelasio', serif;
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #081F32;
+        }
+        
+        .feedback-form .subtitle {
+            color: #6E7A8A;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #081F32;
+            margin-bottom: 8px;
+        }
+        
+        .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #E0E0E0;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s;
+        }
+        
+        .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #1B75BB;
+        }
+        
+        .rating-stars {
+            display: flex;
+            gap: 8px;
+            font-size: 32px;
+            cursor: pointer;
+        }
+        
+        .rating-stars span {
+            color: #ddd;
+            transition: all 0.2s;
+        }
+        
+        .rating-stars span:hover, .rating-stars span.active {
+            color: #FFB800;
+            transform: scale(1.1);
+        }
+        
+        .btn-primary {
+            background: #1B75BB;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #0d5a94;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .feedback-list {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .feedback-card {
+            background: #fff;
+            border: 1px solid #E0E0E0;
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+        
+        .feedback-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .feedback-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .feedback-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1B75BB, #0d5a94);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .user-name {
+            font-weight: 600;
+            color: #081F32;
+        }
+        
+        .feedback-rating {
+            color: #FFB800;
+            font-size: 18px;
+        }
+        
+        .feedback-room {
+            font-size: 13px;
+            color: #1B75BB;
+            background: #e8f0fe;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .feedback-comment {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+        
+        .feedback-date {
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .error-message {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .login-prompt {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #f8f9fa, #fff);
+            border-radius: 16px;
+            border: 1px solid #E0E0E0;
+        }
+        
+        .login-prompt .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6E7A8A;
+        }
+        
+        .empty-state .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .feedback-header h1 {
+                font-size: 32px;
+            }
+            .stats-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .feedback-form {
+                padding: 20px;
+            }
+            .rating-stars {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .feedback-card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body class="feedback-page">
+    <div class="main-banner">
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <img src="logo/logo.svg" alt="Royal Park icon" class="logo-icon">
+                    <span class="logo-text">Rayal Park</span>
+                </div>
+                <div class="burger-menu"><span></span><span></span><span></span></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="favorites.html">Favorites <span id="fav-count">(0)</span></a></li>
+                        <li><a href="cart.html">Cart <span id="cart-count">(0)</span></a></li>
+                        <li><a href="feedback.html" class="active">Reviews</a></li>
+                    </ul>
+                </nav>
+                <div id="auth-buttons">
+                    <a class="btn" href="auth.html" id="login-btn">Sign In</a>
+                    <button class="btn-logout" id="logout-btn" style="display: none;">Logout</button>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <main>
+        <div class="feedback-container">
+            <div class="feedback-header">
+                <h1>⭐ Guest Reviews</h1>
+                <p>What our guests say about their stay</p>
+            </div>
+            
+            <div id="feedback-form-container"></div>
+            
+            <div class="feedback-list" id="feedback-list">
+                <div class="empty-state">
+                    <div class="icon">📝</div>
+                    <p>Loading reviews...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-brand-row">
+                    <img src="logo/logo.svg" alt="Rayal Park logo">
+                    <h2>Rayal Park</h2>
+                </div>
+                <p>Travel deals on hotels, flights, vacation packages.</p>
+                <span>@shovasatkhira88.com</span>
+                <div class="footer-icons">
+                    <img src="img/facebook.png" alt="Facebook icon">
+                    <img src="img/instagramm.png" alt="Instagram icon">
+                    <img src="img/twitter(2).png" alt="Twitter icon">
+                    <img src="img/google.png" alt="Google icon">
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Home</h3>
+                <a href="#">Accessibility</a>
+                <a href="#">Certification</a>
+                <a href="#">Knowledge</a>
+            </div>
+            <div class="footer-column">
+                <h3>Pages</h3>
+                <a href="#">Blogs</a>
+                <a href="#">Careers</a>
+                <a href="#">Community</a>
+            </div>
+            <div class="footer-column">
+                <h3>Subscribe</h3>
+                <div class="footer-subscribe-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .btn-logout {
+            background: #ff4444;
+            padding: 15px 32px;
+            border-radius: 5px;
+            color: white;
+            font-family: 'Gelasio', serif;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 18px;
+            margin-left: -80px;
+            transition: background 0.3s;
+        }
+        
+        .btn-logout:hover {
+            background: #cc0000;
+        }
+        
+        #auth-buttons {
+            display: inline-block;
+        }
+        
+        @media (max-width: 768px) {
+            .btn-logout {
+                padding: 10px 20px;
+                font-size: 14px;
+                margin-left: 0;
+                margin-right: -55px;
+                margin-top: -38px;
+            }
+        }
+    </style>
+
+    <script src="api.js"></script>
+    <script src="feedback.js"></script>
+    <script>
+        async function updateHeaderCounts() {
+            try {
+                const favorites = await getFavorites();
+                const cart = await getCart();
+                const favSpan = document.getElementById('fav-count');
+                const cartSpan = document.getElementById('cart-count');
+                if (favSpan) favSpan.textContent = `(${favorites.length})`;
+                if (cartSpan) cartSpan.textContent = `(${cart.length})`;
+            } catch (error) {
+                console.error('Error updating counts:', error);
+            }
+        }
+        
+        function updateAuthUI() {
+            const user = getCurrentUser();
+            const loginBtn = document.getElementById('login-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            
+            if (user) {
+                if (loginBtn) loginBtn.style.display = 'none';
+                if (logoutBtn) {
+                    logoutBtn.style.display = 'inline-block';
+                    logoutBtn.textContent = `Logout (${user.firstName})`;
+                }
+            } else {
+                if (loginBtn) loginBtn.style.display = 'inline-block';
+                if (logoutBtn) logoutBtn.style.display = 'none';
+            }
+        }
+        
+        function setupLogout() {
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
+                    logoutUser();
+                    updateAuthUI();
+                    window.location.reload();
+                });
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            await updateHeaderCounts();
+            updateAuthUI();
+            setupLogout();
+        });
+    </script>
+</body>
+</html>

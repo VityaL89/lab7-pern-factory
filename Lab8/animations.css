@@ -1,0 +1,240 @@
+/* 1. Плавное появление текста Hero-блока (снизу вверх) */
+.hero--info {
+    animation: heroFade 1.8s ease-in-out forwards;
+}
+
+/* 2. Кнопка поднимается и добавляет синюю тень при наведении */
+@keyframes heroFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. Смена цвета фона кнопки при наведении */
+.btn1 {
+    transition: 
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.btn1:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(27, 117, 187, 0.35);
+}
+
+.btn {
+    transition: background-color .4s ease;
+}
+
+.btn:hover {
+    background-color: #145a8f;
+}
+
+/* 4. Увеличение карточки при наведении (Scale) */
+.feature-card {
+    transition: transform .4s cubic-bezier(.25,.8,.25,1);
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+/* 5. dБесконечное вращение кнопки Play вокруг центра */
+.play-btn {
+    animation: rotatePlay 6s linear infinite;
+}
+
+@keyframes rotatePlay {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 6. Простое плавное появление картинки */
+.room-card_image {
+    animation: fadeImg 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeImg {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* 7. Карточка отзыва подпрыгивает вверх при наведении */
+.testimonial-card {
+    transition: transform .4s ease-out;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+/* 8. Пульсация прозрачности (мигание) цитаты */
+.quote-box,
+.quote-box-active {
+    animation: blinkQuote 2s infinite ease-in-out;
+}
+
+@keyframes blinkQuote {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .4; }
+}
+
+/* 9. Появление тени у карточки при наведении */
+.feature-card {
+    transition: box-shadow .4s ease-in;
+}
+
+.feature-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* 10. Кнопка растягивается в ширину при наведении (эффект пружины) */
+.subscribe-form button {
+    transition: width .5s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.subscribe-form button:hover {
+    width: 180px;
+}
+
+/* 11. Заголовок слегка наклоняется вбок при наведении */
+.features-header h2:hover {
+    transform: skewX(5deg);
+    transition: transform .4s ease;
+}
+
+/* 12. Утолщение границы карточки при наведении */
+.feature-card:hover {
+    border-width: 4px;
+    transition: border-width .4s ease-in-out;
+}
+
+/* 13. Изображение становится ярче (насыщеннее) при наведении */
+.gallery-grid img {
+    transition: filter .6s cubic-bezier(.55, .06, .68, .19);
+}
+
+.gallery-grid img:hover {
+    filter: saturate(2);
+}
+
+/* 14. Эффект свечения (Glow) вокруг оверлея */
+@keyframes overlayBorderGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(27, 117, 187, 0.0);
+    }
+    50% {
+        box-shadow: 0 0 14px 4px rgba(0, 145, 255, 0.425);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(27, 117, 187, 0.0);
+    }
+}
+
+.room-card_overlay {
+    animation: overlayBorderGlow 3.2s ease-in-out infinite;
+    border-radius: 12px;
+}
+
+
+/* 15. Глубокая тень у карточки номера при наведении */
+.room-card {
+    transition: box-shadow .5s ease;
+}
+
+.room-card:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* 16. Иконки в футере увеличиваются и становятся ярче */
+.footer-icons img {
+    transition: 
+        transform .35s ease,
+        opacity .35s ease;
+}
+
+.footer-icons img:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* 17. Комплексный эффект: блок поднимается, меняет фон и тень */
+.reservation {
+    transition: 
+        transform .45s ease,
+        box-shadow .45s ease,
+        background .45s ease;
+}
+
+.reservation:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(240,239,235,1) 100%);
+}
+
+feature-card {
+    position: relative; 
+    overflow: hidden;   
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;          
+    height: 4px;
+    background-color: #1c75b9;
+    transition: width 0.4s ease-in-out; 
+}
+
+.feature-card:hover::before {
+    width: 100%;        
+}
+
+.btn1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;        
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg); 
+    transition: left 0.5s ease;
+}
+
+.btn1:hover::after {
+    left: 150%;         
+}
+
+.subscribe-form input::placeholder {
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+
+.subscribe-form input:focus::placeholder {
+    opacity: 0;             
+    transform: translateX(20px); 
+}
+
+.hero--info::selection {
+    background-color: #1b75bb; 
+    color: #ffffff;            
+}
+
+.hero--info::-moz-selection {
+    background-color: #1b75bb;
+    color: #ffffff;
+}
+

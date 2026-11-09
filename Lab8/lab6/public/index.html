@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Управление номерами отеля</title>
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: 20px auto; }
+    table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+    th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    .block { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 6px; }
+    button { margin: 4px; padding: 6px 12px; cursor: pointer; }
+    input { margin: 4px; padding: 4px; }
+    .error { color: red; }
+    .ok { color: green; }
+  </style>
+</head>
+<body>
+  <h1>🏨 Управление номерами отеля</h1>
+
+  <div class="block">
+    <h2>Добавить номер</h2>
+    <input id="name" placeholder="Название"><br>
+    <input id="category" placeholder="Категория"><br>
+    <input id="price" type="number" placeholder="Цена"><br>
+    <input id="rating" type="number" step="0.1" placeholder="Рейтинг (0-5)"><br>
+    <button onclick="createRoom()">Создать</button>
+    <div id="message" class="error"></div>
+  </div>
+
+  <div class="block">
+    <h2>Текущие номера</h2>
+    <table id="roomsTable">
+      <thead><tr><th>ID</th><th>Название</th><th>Категория</th><th>Цена</th><th>Рейтинг</th><th>Действие</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="block">
+    <h2>Скачать данные</h2>
+    <button onclick="download('json')">Скачать JSON</button>
+    <button onclick="download('xml')">Скачать XML</button>
+    <button onclick="download('html')">Скачать HTML</button>
+  </div>
+
+  <script>
+    async function loadRooms() {
+      const res = await fetch('/api/rooms');
+      const index = await res.json();
+      document.querySelector('#roomsTable tbody').innerHTML = index.map(r =>
+        `<tr>
+          <td>${r.id}</td><td>${r.name}</td><td>${r.category}</td>
+          <td>$${r.price}</td><td>★ ${r.rating}</td>
+          <td><button onclick="deleteRoom('${r.id}')">Удалить</button></td>
+        </tr>`
+      ).join('');
+    }
+
+    async function loadRoomsViaPost() {
+      const res = await fetch('/api/rooms/list', { method: 'POST' });
+      const index = await res.json();
+      console.log('POST-сервис вернул:', index);
+    }
+
+    async function createRoom() {
+      const msg = document.getElementById('message');
+      msg.textContent = '';
+      msg.className = 'error';
+
+      const body = {
+        name: document.getElementById('name').value.trim(),
+        category: document.getElementById('category').value.trim(),
+        price: document.getElementById('price').value,
+        rating: document.getElementById('rating').value
+      };
+
+      if (!body.name || !body.category || !body.price || !body.rating) {
+        msg.textContent = 'Заполните все поля';
+        return;
+      }
+
+      const res = await fetch('/api/rooms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+
+      const data = await res.json();
+      if (!res.ok) { msg.textContent = data.error; return; }
+
+      msg.className = 'ok';
+      msg.textContent = `Номер "${data.room.name}" создан`;
+      ['name','category','price','rating'].forEach(id => document.getElementById(id).value = '');
+      await loadRooms();
+    }
+
+    async function deleteRoom(id) {
+      if (!confirm(`Удалить номер ${id}?`)) return;
+      const res = await fetch(`/api/rooms/${id}`, { method: 'DELETE' });
+      const data = await res.json();
+      if (!res.ok) { alert(data.error); return; }
+      await loadRooms();
+    }
+
+    async function download(format) {
+      const acceptMap = { json: 'application/json', xml: 'application/xml', html: 'text/html' };
+      const res = await fetch('/api/rooms/export', { headers: { 'Accept': acceptMap[format] } });
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `rooms.${format}`; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    (async () => {
+      await loadRooms();
+      await loadRoomsViaPost();
+    })();
+  </script>
+</body>
+</html>

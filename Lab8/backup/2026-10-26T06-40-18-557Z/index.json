@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1791890704545",
+    "name": "Luxury Suite",
+    "category": "Luxury",
+    "price": 130,
+    "rating": 4.9
+  },
+  {
+    "id": "1792936664203",
+    "name": "Middle Hote",
+    "category": "Luxury",
+    "price": 150,
+    "rating": 5
+  },
+  {
+    "id": "1792996313007",
+    "name": "Luxury",
+    "category": "Middle",
+    "price": 120,
+    "rating": 5
+  }
+]

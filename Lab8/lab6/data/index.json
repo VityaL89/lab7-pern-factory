@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "name": "Standard Room",
+    "category": "Standard",
+    "price": 85,
+    "rating": 4.2
+  },
+  {
+    "id": "2",
+    "name": "Luxury Suite",
+    "category": "Luxury",
+    "price": 130,
+    "rating": 4.9
+  },
+  {
+    "id": "3",
+    "name": "Family Room",
+    "category": "Family",
+    "price": 110,
+    "rating": 4.5
+  },
+  {
+    "id": "1793089729765",
+    "name": "Сompetition Room",
+    "category": "Deluxe",
+    "price": 200,
+    "rating": 4.7
+  },
+  {
+    "id": "1793861979267",
+    "name": "Room",
+    "category": "Normal",
+    "price": 32,
+    "rating": 2
+  }
+]

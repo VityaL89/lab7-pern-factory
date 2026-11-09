@@ -1,0 +1,12 @@
+{
+  "name": "rayal-park-cli",
+  "version": "1.0.0",
+  "description": "CLI для управления номерами отеля",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "event-loop": "node experiments/event-loop.js"
+  },
+  "type": "commonjs",
+  "license": "MIT"
+}

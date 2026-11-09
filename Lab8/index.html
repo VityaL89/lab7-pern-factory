@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayal Park</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./animations.css">
+</head>
+<body>
+<div class="main-banner">
+    <div class="container">
+
+         <header>
+            <div class="logo">
+                <img src="logo/logo.svg" alt="Royal Park icon" class="logo-icon">
+                <span class="logo-text">Rayal Park</span>
+            </div>
+
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="favorites.html">Favorites <span id="fav-count">(0)</span></a></li>
+                    <li><a href="cart.html">Cart <span id="cart-count">(0)</span></a></li>
+                    <li><a href="feedback.html">Reviews</a></li>
+                </ul>
+            </nav>
+
+            <div id="auth-buttons">
+                <a class="btn" href="auth.html" id="login-btn">Sign In</a>
+                <button class="btn-logout" id="logout-btn" style="display: none;">Logout</button>
+            </div>
+        </header>
+    </div>
+</div>
+
+<main>
+    <div class="container">
+        <div class="hero">
+            <div class="hero--info">
+                <h2>Serenity</h2>
+                <h1>Stay with us feel <br>like <span class="blue">home</span>.</h1>
+                <p>Pet-friendly hotels are becoming <br>increasingly popular; appealing to travellers <br>who can't bear to be parted</p>
+                <button class="btn1">Read more</button>
+            </div>
+
+            <div class="reservation">
+                <div class="reservation-item">
+                    <span class="label label-checkin">Cheek in</span>
+                    <span class="value value-checkin">10 Feb 2021</span>
+                </div>
+                <div class="reservation-item">
+                    <span class="label label-checkout">Cheek out</span>
+                    <span class="value value-checkout">13 Feb 2021</span>
+                </div>
+                <div class="reservation-item">
+                    <span class="label label-person">Person</span>
+                    <span class="value value-person">2 Adults 1 kid</span>
+                </div>
+                <div class="reservation-item">
+                    <button class="find-room">Find room</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="videos">
+            <div class="rectangle1">
+                <div class="play-btn">
+                    <div class="triangle"></div>
+                </div>
+                <img class="rectangle12" src="img/Rectangle12.jpg" alt="Video preview">
+            </div>
+
+            <div class="rectangle2">
+                <img class="rectangle13" src="img/Rectangle13.jpg" alt="Video preview">
+            </div>
+
+            <div class="text-videos">
+                <h2>dream holidays</h2>
+                <h1>Enjoy unforgettable <br> experiences in dream hotels.</h1>
+                <button class="btn-view">View more</button>
+            </div>
+
+            <div class="ripples">
+                <img class="ripples1" src="img/ripples1.jpg" alt="Decorative ripples">
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="container">
+                <div class="features-header">
+                    <h2>Why you choose us!</h2>
+                    <p>
+                        Naturally, it's becoming even more important for hotel and hospitality brands 
+                        to stand out from the <br>crowd. Content marketing remains a key way for hotels to do this.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <img src="img/easy_booking.svg" alt="Easy booking">
+                        <h3>Easy booking</h3>
+                        <p>The booking process should <br>include minimal steps.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <img src="img/friendly_interface.svg" alt="Friendly interface">
+                        <h3>Friendly interface</h3>
+                        <p>A hotel booking engine with <br>a good user-friendly.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <img src="img/responsibility.svg" alt="Responsibility">
+                        <h3>Responsibility</h3>
+                        <p>You should be able to add <br>rooms to your system.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <img src="img/Group250.png" alt="Quick order supply">
+                        <h3>Quick order supply</h3>
+                        <p>The booking process should <br>include minimal steps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <div class="container">
+                <div class="gallery-top"></div>
+                <div class="gallery-grid">
+                    <div class="gallery-header">
+                        <h2>About hotel gallery</h2>
+                        <p>While some of these examples are real – actually offering guests a stay in the locations advertised – it's mainly just a way.</p>
+                        <button class="btn2">View more</button>
+                    </div>
+
+                    <div class="room-card lux-card">
+                        <img src="img/LuxRoom.svg" class="room-card_image" alt="Luxury room">
+                        <div class="room-card_overlay lux-overlay">
+                            <div class="room-card_top lux-top">
+                                <h3>Lux: Room</h3>
+                                <p>$60 night</p>
+                            </div>
+                            <button class="lux-btn">Book now</button>
+                        </div>
+                    </div>
+
+                    <div class="room-card mini-card">
+                        <img src="img/MiniRoom.svg" class="room-card_image" alt="Mini room">
+                        <div class="room-card_overlay mini-overlay">
+                            <div class="room-card_top">
+                                <h3>Mini Room</h3>
+                                <p>$70 night</p>
+                            </div>
+                            <button class="mini-btn">Book now</button>
+                        </div>
+                    </div>
+
+                    <div class="room-card standle-card">
+                        <img src="img/StandeRoom.svg" class="room-card_image" alt="Standard room">
+                        <div class="room-card_overlay stande-overlay">
+                            <div class="room-card_top">
+                                <h3>Stande Room</h3>
+                                <p>$65 night</p>
+                            </div>
+                            <button class="standle-btn">Book now</button>
+                        </div>
+                    </div>
+
+                    <div class="room-card single-card">
+                        <img src="img/SingleRoom.svg" class="room-card_image" alt="Single room">
+                        <div class="room-card_overlay single-overlay">
+                            <div class="room-card_top">
+                                <h3>Single Room</h3>
+                                <p>$55 night</p>
+                            </div>
+                            <button class="single-btn">Book now</button>
+                        </div>
+                    </div>
+
+                    <div class="room-card elite-card">
+                        <img src="img/EliteRoom.svg" class="room-card_image" alt="Elite room">
+                        <div class="room-card_overlay elite-overlay">
+                            <div class="room-card_top">
+                                <h3>Elite Room</h3>
+                                <p>$65 night</p>
+                            </div>
+                            <button class="elite-btn">Book now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <div class="container">
+                <div class="testimonials-header">
+                    <h2>What our client say</h2>
+                    <a class="btn-view-all">View All</a>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="img/Davide.svg" alt="David lee">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="quote-box">"</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Ultrices.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h3 class="author-name">David lee</h3>
+                            <span class="author-mail">davidlee@</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card active">
+                        <div class="testimonial-avatar">
+                            <img src="img/Ravi.svg" alt="Ravi shankor">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="quote-box-active">"</div>
+                            <p class="ravi-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Ultrices.</p>
+                        </div>
+                        <div class="testimonial-author ravi-author">
+                            <h3 class="ravi-name">Ravi shankor</h3>
+                            <span class="ravi-email">ravishankor@</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="img/Thomas.svg" alt="Thomas lew">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="quote-box">"</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Ultrices.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h3 class="author-name">Thomas lew</h3>
+                            <span class="author-mail">thomaslew@</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subscribe-wrapper">
+            <div class="subscribe-box">
+                <h2>STAY IN TOUCH</h2>
+                <p>Join our email. First to know about specials,events and more!</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="footer-brand-row">
+                <img src="logo/logo.svg" alt="Rayal Park logo">
+                <h2>Rayal Park</h2>
+            </div>
+            <p>Travel deals on hotels, flights, vacation packages.</p>
+            <span>@shovasatkhira88.com</span>
+            <div class="footer-icons">
+                <img src="img/facebook.png" alt="Facebook icon">
+                <img src="img/instagramm.png" alt="Instagram icon">
+                <img src="img/twitter(2).png" alt="Twitter icon">
+                <img src="img/google.png" alt="Google icon">
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Home</h3>
+            <a href="#">Accessibility</a>
+            <a href="#">Certification</a>
+            <a href="#">Knowledge</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Pages</h3>
+            <a href="#">Blogs</a>
+            <a href="#">Careers</a>
+            <a href="#">Community</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Admin</h3>
+            <a href="admin.html" id="admin-link" style="display: none;">🔐 Admin Panel</a>
+            <div class="footer-subscribe-form">
+                <input type="text" placeholder="Enter your email address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .btn-logout {
+        background: #ff4444;
+        padding: 15px 32px;
+        border-radius: 5px;
+        color: white;
+        font-family: 'Gelasio', serif;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 18px;
+        margin-left: -80px;
+        transition: background 0.3s;
+    }
+    
+    .btn-logout:hover {
+        background: #cc0000;
+    }
+    
+    #auth-buttons {
+        display: inline-block;
+    }
+    
+    @media (max-width: 768px) {
+        .btn-logout {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin-left: 0;
+            margin-right: -55px;
+            margin-top: -38px;
+        }
+        #auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+    }
+</style>
+
+<script src="api.js"></script>
+<script>
+    async function updateHeaderCounts() {
+        const favorites = await getFavorites();
+        const cart = await getCart();
+        const favSpan = document.getElementById('fav-count');
+        const cartSpan = document.getElementById('cart-count');
+        if (favSpan) favSpan.textContent = `(${favorites.length})`;
+        if (cartSpan) cartSpan.textContent = `(${cart.length})`;
+    }
+    
+    function updateAuthUI() {
+        const user = getCurrentUser();
+        const loginBtn = document.getElementById('login-btn');
+        const logoutBtn = document.getElementById('logout-btn');
+        const adminLink = document.getElementById('admin-link');
+        
+        if (user) {
+            if (loginBtn) loginBtn.style.display = 'none';
+            if (logoutBtn) {
+                logoutBtn.style.display = 'inline-block';
+                logoutBtn.textContent = `Logout (${user.firstName})`;
+            }
+            if (adminLink && user.role === 'admin') adminLink.style.display = 'block';
+        } else {
+            if (loginBtn) loginBtn.style.display = 'inline-block';
+            if (logoutBtn) logoutBtn.style.display = 'none';
+            if (adminLink) adminLink.style.display = 'none';
+        }
+    }
+    
+    function setupLogout() {
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                logoutUser();
+                updateAuthUI();
+                updateHeaderCounts();
+                location.reload();
+            });
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', async () => {
+        await updateHeaderCounts();
+        updateAuthUI();
+        setupLogout();
+    });
+</script>
+
+</body>
+</html>

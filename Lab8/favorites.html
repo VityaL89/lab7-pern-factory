@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное - Rayal Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+    .container {
+    width: 1600px;
+    padding: 0 40px;
+    }   
+
+    .favorites-page .main-banner {
+        height: auto;
+        min-height: auto;
+        background-image: none;
+        background: #fff;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .favorites-header {
+        text-align: left;
+        margin: 40px 0 30px;
+    }
+    
+    .favorites-header h1 {
+        font-family: 'Gelasio', serif;
+        font-size: 42px;
+        font-weight: 700;
+        color: #081F32;
+        margin-bottom: 15px;
+        margin-left: 116px;
+    }
+    
+    .favorites-header p {
+        font-size: 18px;
+        color: #6E7A8A;
+        margin-left: 116px;
+    }
+    
+    .favorites-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin: 40px 0 80px;
+    }
+    
+    .empty-message {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 60px 20px;
+    }
+    
+    .empty-message h3 {
+        font-family: 'Gelasio', serif;
+        font-size: 24px;
+        color: #081F32;
+        margin-bottom: 15px;
+    }
+    
+    .empty-message p {
+        font-size: 16px;
+        color: #6E7A8A;
+    }
+    
+    .favorites-grid .room-card {
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #E0E0E0;
+        background: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .favorites-grid .room-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .favorites-grid .room-card__image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        flex-shrink: 0;
+    }
+    
+    .favorites-grid .room-card__body {
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+    }
+    
+    .favorites-grid .room-card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+    }
+    
+    .favorites-grid .room-card__header h3 {
+        font-family: 'Gelasio', serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #081F32;
+        margin: 0;
+    }
+    
+    .favorites-grid .room-card__price {
+        font-size: 18px;
+        color: #1B75BB;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    
+    .favorites-grid .room-card__price span {
+        font-size: 12px;
+        color: #6E7A8A;
+        font-weight: 400;
+    }
+    
+    .favorites-grid .room-card__meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .favorites-grid .room-card__category {
+        display: inline-block;
+        padding: 4px 12px;
+        background: #e8f0fe;
+        color: #1B75BB;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 20px;
+    }
+    
+    .favorites-grid .room-card__rating {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: #FFB800;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .favorites-grid .room-card__description {
+        font-size: 14px;
+        color: #6E7A8A;
+        line-height: 1.5;
+        margin: 12px 0;
+    }
+    
+    .favorites-grid .room-card__amenities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 15px 0;
+    }
+    
+    .favorites-grid .amenity-tag {
+        font-size: 11px;
+        color: #6E7A8A;
+        background: #f5f5f5;
+        padding: 4px 10px;
+        border-radius: 4px;
+    }
+    
+    .favorites-grid .room-card__buttons {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .favorites-grid .btn-fav {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 38px;
+        min-width: 42px;
+        background: #FFFFFF;
+        border: 1.5px solid #E0E0E0;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s;
+        padding: 0;
+        flex-shrink: 0;
+    }
+    
+    .favorites-grid .btn-fav:hover {
+        border-color: #1B75BB;
+        background: #F0F7FF;
+    }
+    
+    .favorites-grid .btn-fav.active {
+        background: #FFF0F0;
+        border-color: #FF6B6B;
+    }
+    
+    .favorites-grid .btn-cart {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex: 1;
+        height: 38px;
+        background: #1B75BB;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        cursor: pointer;
+        transition: background 0.2s;
+        padding: 0 10px;
+        white-space: nowrap;
+    }
+    
+    .favorites-grid .btn-cart:hover {
+        background: #0D5A94;
+    }
+    
+    .favorites-grid .btn-book {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        height: 38px;
+        background: #1B75BB;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        cursor: pointer;
+        transition: background 0.2s;
+        padding: 0 10px;
+        white-space: nowrap;
+    }
+    
+    .favorites-grid .btn-book:hover {
+        background: #0D5A94;
+    }
+    
+    @media (max-width: 1200px) {
+        .favorites-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .favorites-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .favorites-header h1 {
+            font-size: 32px;
+        }
+        
+        .favorites-grid .room-card__image {
+            height: 220px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .favorites-grid .room-card__body {
+            padding: 15px;
+        }
+        
+        .favorites-grid .room-card__header h3 {
+            font-size: 18px;
+        }
+        
+        .favorites-grid .room-card__price {
+            font-size: 16px;
+        }
+        
+        .favorites-grid .room-card__description {
+            font-size: 13px;
+        }
+    }
+</style>
+</head>
+<body class="favorites-page">
+
+<script src="api.js"></script>
+<script src="favorites.js"></script>
+
+<div class="main-banner">
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="logo/logo.svg" alt="Royal Park icon" class="logo-icon">
+                <span class="logo-text">Rayal Park</span>
+            </div>
+            <div class="burger-menu"><span></span><span></span><span></span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="favorites.html" class="active">Favorites <span id="fav-count">(0)</span></a></li>
+                    <li><a href="cart.html">Cart <span id="cart-count">(0)</span></a></li>
+                </ul>
+            </nav>
+            <a class="btn" href="#">Book now</a>
+        </header>
+    </div>
+</div>
+
+<main>
+    <div class="container">
+        <div class="favorites-header">
+            <h1>Your Favorites</h1>
+            <p>Rooms you've saved for later</p>
+        </div>
+
+        <div id="favorites-container" class="favorites-grid">
+            <div class="loading">Loading favorites...</div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="footer-brand-row">
+                <img src="logo/logo.svg" alt="Rayal Park logo">
+                <h2>Rayal Park</h2>
+            </div>
+            <p>Travel deals on hotels, flights, vacation packages.</p>
+            <span>@shovasatkhira88.com</span>
+        </div>
+        <div class="footer-column">
+            <h3>Home</h3>
+            <a href="#">Accessibility</a>
+            <a href="#">Certification</a>
+            <a href="#">Knowledge</a>
+        </div>
+        <div class="footer-column">
+            <h3>Pages</h3>
+            <a href="#">Blogs</a>
+            <a href="#">Careers</a>
+            <a href="#">Community</a>
+        </div>
+        <div class="footer-column">
+            <h3>SUBSCRIBE</h3>
+            <div class="footer-subscribe-form">
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="favorites.js"></script>
+</body>
+</html>
